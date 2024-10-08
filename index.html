@@ -2,49 +2,135 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./output.css" />
-    <title>Document</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./output.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete"
+    />
+    <title>Bank Account Management</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f4f8;
+      }
+      h1 {
+        font-size: 2rem;
+        color: #ffffff;
+        background-color: #38a169;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #2d3748;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      input[type="text"],
+      input[type="number"] {
+        border: 2px solid #cbd5e0;
+        padding: 0.5rem;
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      input[type="submit"] {
+        background-color: #3182ce;
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+      input[type="submit"]:hover {
+        background-color: #2b6cb0;
+      }
+      #accountsDiv {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        padding-top: 1rem;
+      }
+      .account-card {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .account-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      .delete-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        color: #e53e3e;
+        transition: color 0.3s ease;
+      }
+      .delete-icon:hover {
+        color: #c53030;
+      }
+    </style>
   </head>
-  <body class="w-[98vw] flex justify-center items-center flex-col">
-    <div class="pt-4 px-4">
-      <h1 class="font-bold text-gray-800 bg-green-600 p-2 rounded-lg shadow-md">
-        OOP in Javascript
-      </h1>
-    </div>
-    <div class="flex flex-col p-4">
-      <div class="py-1 px-4 shadow-md rounded-lg ">
-        <h2>Open a new bank account</h2>
-        <form id="accountForm" class="py-2">
-          <div>
-            <input
-              type="text"
-              class="p-2 border-2 rounded-md w-full"
-              placeholder="Customer name"
-              id="customerName" required
-            />
-          </div>
-          <div class="my-2">
-            <input
-              type="number"
-              class="p-2 border-2 rounded-md w-full"
-              placeholder="Initial balance"
-              id="initialBalance"
-            />
-          </div>
-          <div class="my-2">
-            <input
-              type="submit"
-              class="p-2 border-2 rounded-md w-full cursor-pointer"
-              value="Create account"
-            />
-          </div>
-        </form>
+  <body class="flex justify-center items-center flex-col">
+    <div class="container">
+      <div class="pt-4 px-4 text-center">
+        <h1 class="font-bold p-2 rounded-lg shadow-sm">OOP in Javascript</h1>
       </div>
-      <div class="grid grid-cols-2 p-4 gap-2 w-[90vw]" id="accouns-div"></div>
+
+      <!-- Form for creating bank accounts -->
+      <div class="flex flex-col p-4">
+        <div class="py-4 px-4 shadow-md rounded-lg bg-white">
+          <h2>Open a New Bank Account</h2>
+          <form id="accountForm">
+            <div class="form-group">
+              <input
+                type="text"
+                class="p-2 border-2 rounded-md w-full"
+                placeholder="Customer name"
+                id="customerName"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                class="p-2 border-2 rounded-md w-full"
+                placeholder="Initial balance"
+                id="initialBalance"
+              />
+            </div>
+            <div>
+              <input
+                type="submit"
+                class="p-2 border-2 rounded-md w-full cursor-pointer"
+                value="Create Account"
+              />
+            </div>
+          </form>
+        </div>
+
+        <!-- Accounts display section -->
+        <div id="accountsDiv" class="grid gap-2"></div>
+      </div>
     </div>
 
-    <!-- <script src="./constructor_fn.js"></script> -->
-    <script src="./prototype.js"></script>
+    <!-- JS script -->
+    <script src="./oops_code.js"></script>
   </body>
 </html>
