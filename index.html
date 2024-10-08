@@ -6,8 +6,43 @@
     <link rel="stylesheet" href="./output.css" />
     <title>Document</title>
   </head>
-  <body>
-    <h1 class="font-bold text-gray-800">OOP in Javascript</h1>
+  <body class="w-[98vw] flex justify-center items-center flex-col">
+    <div class="pt-4 px-4">
+      <h1 class="font-bold text-gray-800 bg-green-600 p-2 rounded-lg shadow-md">
+        OOP in Javascript
+      </h1>
+    </div>
+    <div class="flex flex-col p-4">
+      <div class="py-1 px-4 shadow-md rounded-lg ">
+        <h2>Open a new bank account</h2>
+        <form id="accountForm" class="py-2">
+          <div>
+            <input
+              type="text"
+              class="p-2 border-2 rounded-md w-full"
+              placeholder="Customer name"
+              id="customerName" required
+            />
+          </div>
+          <div class="my-2">
+            <input
+              type="number"
+              class="p-2 border-2 rounded-md w-full"
+              placeholder="Initial balance"
+              id="initialBalance"
+            />
+          </div>
+          <div class="my-2">
+            <input
+              type="submit"
+              class="p-2 border-2 rounded-md w-full cursor-pointer"
+              value="Create account"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="grid grid-cols-2 p-4 gap-2 w-[90vw]" id="accouns-div"></div>
+    </div>
 
     <!-- <script src="./constructor_fn.js"></script> -->
     <script src="./prototype.js"></script>

@@ -11,8 +11,39 @@ BankAccount.prototype.withdraw = function (amount) {
     this.balance -= amount
 }
 
-const dhiruAccount = new BankAccount("Dhiru", 500)
-dhiruAccount.deposit(6000)
-dhiruAccount.withdraw(18)
+const bankAccounts = []
 
-console.log(dhiruAccount);
+const accountForm = document.querySelector('#accountForm')
+const customerName = document.querySelector('#customerName')
+const initialBalance = document.querySelector('#initialBalance')
+const accountsDiv = document.querySelector('#accouns-div')
+
+
+accountForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Create a new account
+    const account = new BankAccount(customerName.value, +initialBalance.value);
+    bankAccounts.push(account);
+    
+    // Create the div only for the newly added account
+    const accountDiv = document.createElement('div');
+    accountDiv.classList.add('rounded-md', 'shadow-md', 'p-4');
+    
+    const accountHolder = document.createElement('p');
+    accountHolder.innerText = `Account holder: ${account.customerName}`;
+    
+    const accountBalance = document.createElement('p');
+    accountBalance.innerText = `Balance: ${account.balance}`;
+    
+    const accountNumber = document.createElement('p');
+    accountNumber.innerText = `Account Number: ${account.accountNumber}`;
+    
+    accountDiv.append(accountHolder, accountNumber, accountBalance);
+    
+    accountsDiv.append(accountDiv);
+
+    console.log(bankAccounts);
+});
+
+
