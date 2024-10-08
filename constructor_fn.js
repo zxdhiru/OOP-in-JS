@@ -3,15 +3,16 @@ function BankAccount(customerName, balance = 0) {
         this.accountNumber = Math.floor(Date.now() + Math.random()),
         this.balance = balance
 
-    function deposit(amount) {
+    this.deposit = function (amount) {
         this.balance += amount
     }
 
-    function withdraw(amount) {
+    this.withdraw = function (amount) {
         this.balance -= amount
     }
 }
 
 const dhiruAccount = new BankAccount("Dhiru", 1000)
-
+dhiruAccount.deposit(4000)
+dhiruAccount.withdraw(500)
 console.log(dhiruAccount);
